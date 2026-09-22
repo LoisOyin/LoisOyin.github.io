@@ -1,11 +1,623 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Lois Olanrewaju</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lois Olanrewaju | Energy Systems Engineer</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: #24313a;
+            background: #ffffff;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.96);
+            border-bottom: 1px solid #e8ecef;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            font-size: 0.92rem;
+        }
+
+        .nav-links a:hover {
+            color: #176b87;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 110px 0 100px;
+            background: #f4f8f9;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            color: #176b87;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(2.6rem, 6vw, 4.7rem);
+            line-height: 1.05;
+            margin-bottom: 25px;
+            color: #17242b;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.2rem, 2vw, 1.55rem);
+            font-weight: normal;
+            color: #4d626c;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 760px;
+            font-size: 1.08rem;
+            color: #53656d;
+        }
+
+        .buttons {
+            margin-top: 35px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.92rem;
+            border: 1px solid #176b87;
+        }
+
+        .button.primary {
+            background: #176b87;
+            color: white;
+        }
+
+        .button.secondary {
+            color: #176b87;
+            background: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 85px 0;
+        }
+
+        section:nth-child(even) {
+            background: #f8fafb;
+        }
+
+        .section-title {
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            display: block;
+            color: #176b87;
+            font-size: 0.82rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: #17242b;
+        }
+
+        .about-text {
+            max-width: 850px;
+            font-size: 1.05rem;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+        }
+
+        /* Experience */
+        .experience-item {
+            border-left: 3px solid #176b87;
+            padding: 0 0 35px 28px;
+            margin-bottom: 35px;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-item h3 {
+            color: #17242b;
+            font-size: 1.3rem;
+            margin-bottom: 4px;
+        }
+
+        .experience-meta {
+            color: #176b87;
+            font-weight: bold;
+            font-size: 0.92rem;
+            margin-bottom: 12px;
+        }
+
+        /* Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 22px;
+        }
+
+        .project-card {
+            border: 1px solid #e1e7ea;
+            border-radius: 8px;
+            padding: 28px;
+            background: white;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .project-card .category {
+            color: #176b87;
+            font-size: 0.78rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .project-card h3 {
+            margin-bottom: 12px;
+            color: #17242b;
+        }
+
+        .project-card p {
+            color: #596b73;
+            font-size: 0.94rem;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 35px;
+        }
+
+        .education-item h3 {
+            color: #17242b;
+            margin-bottom: 5px;
+        }
+
+        .education-item .institution {
+            color: #176b87;
+            font-weight: bold;
+        }
+
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            padding: 9px 15px;
+            border: 1px solid #d7e1e5;
+            border-radius: 20px;
+            background: white;
+            font-size: 0.9rem;
+        }
+
+        /* Contact */
+        .contact-box {
+            max-width: 750px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 25px;
+            color: #176b87;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 30px 0;
+            background: #17242b;
+            color: #cbd5d9;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 700px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 75px 0;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Lois Olanrewaju</h1>
-    <p>Energy Systems Engineer | Energy Transition & Decarbonisation</p>
-    <p>My portfolio website is coming soon.</p>
+
+<nav>
+    <div class="container nav-inner">
+        <div class="logo">LO</div>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<header class="hero">
+    <div class="container hero-content">
+        <div class="eyebrow">Energy Systems · Energy Transition · Decarbonisation</div>
+
+        <h1>Lois Olanrewaju</h1>
+
+        <h2>
+            Energy Systems Engineer | Energy Transition & Decarbonisation |
+            System Modelling & Optimisation
+        </h2>
+
+        <p>
+            Erasmus Mundus Master's student in Decentralised Smart Energy Systems
+            with experience spanning energy access, renewable energy, energy
+            monitoring, energy transition research and energy systems analysis.
+        </p>
+
+        <div class="buttons">
+            <a class="button primary" href="#projects">Explore My Work</a>
+            <a class="button secondary" href="#contact">Get in Touch</a>
+        </div>
+    </div>
+</header>
+
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <div class="section-title">
+            <span>About</span>
+            <h2>Energy systems with a transition mindset</h2>
+        </div>
+
+        <div class="about-text">
+            <p>
+                I am an Energy Systems Engineer pursuing an Erasmus Mundus Master's
+                in Decentralised Smart Energy Systems, with an academic background
+                in Electrical & Electronics Engineering.
+            </p>
+
+            <p>
+                My experience sits at the intersection of energy technology,
+                energy access, project development and the wider energy transition.
+                I am particularly interested in how technical solutions interact
+                with markets, policy, regulation and commercial realities.
+            </p>
+
+            <p>
+                My current work includes research on sustainable aviation fuels,
+                e-fuels and European energy-transition policy and regulation.
+                I am also interested in renewable energy, energy systems modelling,
+                carbon management and energy project development.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- EXPERIENCE -->
+<section id="experience">
+    <div class="container">
+        <div class="section-title">
+            <span>Experience</span>
+            <h2>Professional & Research Experience</h2>
+        </div>
+
+        <div class="experience-item">
+            <h3>Research Intern — RELY</h3>
+            <div class="experience-meta">
+                Technip Energies × John Cockerill · 2026–Present
+            </div>
+            <p>
+                Research on sustainable aviation fuels and Power-to-Liquid pathways,
+                including Fischer-Tropsch and Methanol-to-Jet routes. Work includes
+                European policy and regulatory analysis, ReFuelEU Aviation and
+                assessment of technological pathways for e-SAF production.
+            </p>
+        </div>
+
+        <div class="experience-item">
+            <h3>Project Executive — Milsat Technologies</h3>
+            <div class="experience-meta">
+                Abuja, Nigeria · 2023–2025
+            </div>
+            <p>
+                Worked across energy access and mini-grid activities, supporting
+                project deployment, energy monitoring, performance analysis and
+                business development. Worked with community-level energy data
+                generated through IoT monitoring systems.
+            </p>
+        </div>
+
+        <div class="experience-item">
+            <h3>Research Assistant — IoT Energy & Infrastructure Monitoring</h3>
+            <div class="experience-meta">
+                Federal University of Technology Akure · 2022–2023
+            </div>
+            <p>
+                Contributed to research involving IoT-based monitoring and
+                infrastructure condition assessment, developing experience in
+                data collection, analysis and engineering research.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="container">
+        <div class="section-title">
+            <span>Selected Work</span>
+            <h2>Projects</h2>
+        </div>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <div class="category">Power Systems</div>
+                <h3>15-Bus Power System Optimisation</h3>
+                <p>
+                    Analysis and optimisation of a 15-bus electrical network using
+                    MATPOWER, including reduction of system Joule losses.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="category">Renewable Energy</div>
+                <h3>PV-CSP Energy System Analysis</h3>
+                <p>
+                    Assessment of a hybrid photovoltaic and concentrated solar
+                    power configuration, exploring renewable electricity generation
+                    and system integration.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="category">Energy Systems</div>
+                <h3>Residential Energy Optimisation</h3>
+                <p>
+                    Energy-system optimisation involving photovoltaic generation,
+                    battery storage, electric vehicles and heat-pump demand.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="category">Sustainable Fuels</div>
+                <h3>Power-to-Liquid e-SAF Pathways</h3>
+                <p>
+                    Comparative assessment of Fischer-Tropsch and Methanol-to-Jet
+                    pathways within the context of sustainable aviation fuel policy
+                    and regulation.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="category">Carbon Management</div>
+                <h3>Ocean Carbon Dioxide Removal</h3>
+                <p>
+                    Comparative assessment of ocean carbon removal approaches,
+                    including direct ocean carbon capture and other carbon removal
+                    pathways.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="category">Energy Access</div>
+                <h3>Community Energy Monitoring</h3>
+                <p>
+                    Development and analysis of electricity-use data from
+                    underserved communities to support energy-access and
+                    mini-grid decision-making.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- RESEARCH -->
+<section id="research">
+    <div class="container">
+        <div class="section-title">
+            <span>Research</span>
+            <h2>Research Interests</h2>
+        </div>
+
+        <div class="about-text">
+            <p>
+                My interests lie across the technical, economic and policy
+                dimensions of the energy transition.
+            </p>
+
+            <div class="skills" style="margin-top:25px;">
+                <div class="skill">Energy Transition</div>
+                <div class="skill">Decarbonisation</div>
+                <div class="skill">Renewable Energy</div>
+                <div class="skill">Energy Policy</div>
+                <div class="skill">Energy Regulation</div>
+                <div class="skill">Sustainable Aviation Fuels</div>
+                <div class="skill">Power-to-X</div>
+                <div class="skill">Carbon Management</div>
+                <div class="skill">Energy Markets</div>
+                <div class="skill">Energy Access</div>
+                <div class="skill">Energy Systems Modelling</div>
+                <div class="skill">Smart Grids</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- EDUCATION -->
+<section id="education">
+    <div class="container">
+        <div class="section-title">
+            <span>Education</span>
+            <h2>Academic Background</h2>
+        </div>
+
+        <div class="education-item">
+            <h3>Erasmus Mundus Master — Decentralised Smart Energy Systems</h3>
+            <div class="institution">
+                Université de Lorraine · Politecnico di Torino
+            </div>
+            <p>2025–2027</p>
+        </div>
+
+        <div class="education-item">
+            <h3>BEng Electrical & Electronics Engineering</h3>
+            <div class="institution">
+                Federal University of Technology Akure, Nigeria
+            </div>
+            <p>2017–2023 · First Class Honours</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+    <div class="container">
+        <div class="section-title">
+            <span>Capabilities</span>
+            <h2>Technical & Professional Skills</h2>
+        </div>
+
+        <div class="skills">
+            <div class="skill">Energy Systems</div>
+            <div class="skill">Renewable Energy</div>
+            <div class="skill">Energy Transition</div>
+            <div class="skill">Energy Policy & Regulation</div>
+            <div class="skill">Energy Systems Modelling</div>
+            <div class="skill">Power Systems</div>
+            <div class="skill">Energy Access</div>
+            <div class="skill">Decarbonisation</div>
+            <div class="skill">Python</div>
+            <div class="skill">MATLAB</div>
+            <div class="skill">MATPOWER</div>
+            <div class="skill">IoT & Energy Monitoring</div>
+            <div class="skill">Data Analysis</div>
+            <div class="skill">Research & Technical Analysis</div>
+            <div class="skill">Project Coordination</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <div class="section-title">
+            <span>Contact</span>
+            <h2>Let's connect</h2>
+        </div>
+
+        <div class="contact-box">
+            <p>
+                I am interested in opportunities across energy transition,
+                energy systems, renewable energy, policy, regulation,
+                sustainable fuels, carbon management and energy project
+                development.
+            </p>
+
+            <div class="contact-links">
+                <a href="https://github.com/LoisOyin" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="container">
+        © 2026 Lois Olanrewaju · Energy Systems & Energy Transition
+    </div>
+</footer>
+
 </body>
 </html>
