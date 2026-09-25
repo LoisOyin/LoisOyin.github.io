@@ -1,150 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V4W2PMS51C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-V4W2PMS51C');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4W2PMS51C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-V4W2PMS51C');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Energy Markets & Economic Analysis | Lois Olanrewaju</title>
 
+    <meta name="description" content="Energy markets, electricity market analysis, economics and financial outcomes by Lois Olanrewaju.">
+
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background: #f7f9fa;
+            color: #1f2933;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 60px 25px;
-            line-height: 1.7;
-            color: #222;
+            padding: 0 28px;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+        /* Navigation */
+
+        nav {
+            padding: 24px 0;
+            background: #ffffff;
+            border-bottom: 1px solid #e6ecef;
         }
 
-        h2 {
-            margin-top: 50px;
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
         }
 
         .back-link {
+            font-size: 0.92rem;
+            color: #58727a;
+        }
+
+        .back-link:hover {
+            color: #0f766e;
+        }
+
+        /* Hero */
+
+        .hero {
+            padding: 85px 0 65px;
+            background: #ffffff;
+        }
+
+        .eyebrow {
             display: inline-block;
-            margin-bottom: 40px;
-            text-decoration: none;
+            margin-bottom: 18px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #0f766e;
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+            color: #18252b;
+            margin-bottom: 25px;
+        }
+
+        .intro {
+            max-width: 760px;
+            font-size: 1.12rem;
+            color: #62747b;
+        }
+
+        /* Content */
+
+        main {
+            padding: 70px 0 100px;
+        }
+
+        .content-card {
+            background: #ffffff;
+            border: 1px solid #dfe7ea;
+            border-radius: 16px;
+            padding: 42px;
+        }
+
+        .content-card p {
+            margin-bottom: 20px;
+            color: #52656c;
+        }
+
+        .content-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Project Files */
+
+        .files-section {
+            margin-top: 30px;
+        }
+
+        .files-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #1f2933;
         }
 
         .report {
-            margin-top: 25px;
-            padding: 25px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
+            margin-bottom: 18px;
+            padding: 30px;
+            background: #ffffff;
+            border: 1px solid #dfe7ea;
+            border-radius: 16px;
         }
 
-        .report a {
-            text-decoration: none;
-            font-weight: bold;
+        .report:last-child {
+            margin-bottom: 0;
+        }
+
+        .report h3 {
+            margin-bottom: 10px;
+            color: #1f2933;
+        }
+
+        .report p {
+            color: #687980;
+            margin-bottom: 20px;
+        }
+
+        .report-link {
+            display: inline-block;
+            padding: 11px 18px;
+            background: #0f766e;
+            color: #ffffff;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: opacity 0.2s ease;
+        }
+
+        .report-link:hover {
+            opacity: 0.88;
+        }
+
+        /* Footer */
+
+        footer {
+            padding: 32px 0;
+            background: #ffffff;
+            border-top: 1px solid #e6ecef;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer p,
+        .footer-link {
+            font-size: 0.85rem;
+            color: #7b8b90;
+        }
+
+        .footer-link:hover {
+            color: #0f766e;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav-inner {
+                padding: 0 20px;
+            }
+
+            .hero {
+                padding: 65px 0 50px;
+            }
+
+            .content-card {
+                padding: 30px 24px;
+            }
+
+            .report {
+                padding: 25px 22px;
+            }
+
+            .footer-inner {
+                padding: 0 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <a href="../index.html" class="back-link">← Back to Portfolio</a>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="../index.html" class="logo">Lois Olanrewaju</a>
+            <a href="policy-analysis-markets.html" class="back-link">← Policy & Markets</a>
+        </div>
+    </nav>
 
-    <h1>Energy Markets & Economic Analysis</h1>
 
-    <p>
-        A deep dive into how electricity markets work and how market
-        mechanisms translate into financial outcomes.
-    </p>
+    <!-- Hero -->
+    <header class="hero">
+        <div class="container">
 
-    <p>
-        In this project, I analysed day-ahead, intraday and balancing
-        electricity markets, working with merit order, market clearing
-        and balancing prices. I also explored how changes in electricity
-        supply and demand can affect market prices and financial outcomes.
-    </p>
+            <span class="eyebrow">Energy Markets · DENSYS · 2026</span>
 
-    <p>
-        What I found particularly interesting was the link between the
-        technical operation of the power system and the economic decisions
-        happening around it. It gave me a practical introduction to
-        analysing energy markets not just from a systems perspective,
-        but also through the lens of pricing, revenues, market exposure
-        and commercial performance.
-    </p>
+            <h1>Energy Markets & Economic Analysis</h1>
 
-    <p>
-        This project strengthened my interest in the intersection of
-        energy systems, energy markets, economics and business
-        decision-making.
-    </p>
-    
-    <p>
-        Also, I did a very fun research and presentation on a current energy policy topic, Chile’s hydrogen tax credits bill. It was a really interesting opportunity to dive into a current energy news story and look at the policy and economic ideas behind it. I’ve included the presentation below if you’d like to have a look!
-    </p>
-    
-    <h2>Project Files</h2>
+            <p class="intro">
+                A deep dive into how electricity markets work and how market
+                mechanisms translate into financial outcomes.
+            </p>
 
-    <div class="report">
-        <h3>Energy Economics Project</h3>
+        </div>
+    </header>
 
-        <p>
-            Detailed analysis of day-ahead, intraday and balancing
-            electricity markets, including market clearing, balancing
-            prices and financial outcomes.
-        </p>
 
-        <a href="../Energy_economics_project.pdf" target="_blank">
-            View PDF →
-        </a>
-    </div>
+    <!-- Main Content -->
+    <main>
+        <div class="container">
 
-    <div class="report">
-        <h3>Energy Markets</h3>
+            <div class="content-card">
 
-        <p>
-            Supporting calculations and analysis for the electricity
-            market assessment.
-        </p>
+                <p>
+                    In this project, I analysed day-ahead, intraday and balancing
+                    electricity markets, working with merit order, market clearing
+                    and balancing prices. I also explored how changes in electricity
+                    supply and demand can affect market prices and financial outcomes.
+                </p>
 
-        <a href="../Energy_markets.xlsx" target="_blank">
-            Open Excel File →
-        </a>
-    </div>
+                <p>
+                    What I found particularly interesting was the link between the
+                    technical operation of the power system and the economic decisions
+                    happening around it. It gave me a practical introduction to
+                    analysing energy markets not just from a systems perspective,
+                    but also through the lens of pricing, revenues, market exposure
+                    and commercial performance.
+                </p>
 
-    <div class="report">
-        <h3>Energy Markets: Flexibility and Uncertainty</h3>
+                <p>
+                    This project strengthened my interest in the intersection of
+                    energy systems, energy markets, economics and business
+                    decision-making.
+                </p>
 
-        <p>
-            Supporting analysis exploring flexibility and uncertainty
-            within energy markets.
-        </p>
+                <p>
+                    Also, I did a very fun research and presentation on a current
+                    energy policy topic, Chile’s hydrogen tax credits bill. It was
+                    a really interesting opportunity to dive into a current energy
+                    news story and look at the policy and economic ideas behind it.
+                    I’ve included the presentation below if you’d like to have a look!
+                </p>
 
-        <a href="../Energy_markets_flexibility_and_uncertainty.xlsx" target="_blank">
-            Open Excel File →
-        </a>
-    </div>
+            </div>
 
-     <div class="report">
-        <h3>Energy News: Chile’s Hydrogen Tax Credit Bill</h3>
 
-        <p>
-            An exploration of Chile’s new hydrogen tax credits bill and
-            its potential implications for hydrogen investment and development.
-        </p>
+            <!-- Project Files -->
+            <section class="files-section">
 
-        <a href="../Chile_tax_credit_presentation.pdf" target="_blank">
-            View Presentation →
-        </a>
-    </div>
-   
+                <h2>Project Files</h2>
+
+                <div class="report">
+
+                    <h3>Energy Economics Project</h3>
+
+                    <p>
+                        Detailed analysis of day-ahead, intraday and balancing
+                        electricity markets, including market clearing, balancing
+                        prices and financial outcomes.
+                    </p>
+
+                    <a href="../Energy_economics_project.pdf"
+                       class="report-link"
+                       target="_blank">
+                        View PDF →
+                    </a>
+
+                </div>
+
+
+                <div class="report">
+
+                    <h3>Energy Markets</h3>
+
+                    <p>
+                        Supporting calculations and analysis for the electricity
+                        market assessment.
+                    </p>
+
+                    <a href="../Energy_markets.xlsx"
+                       class="report-link"
+                       target="_blank">
+                        Open Excel File →
+                    </a>
+
+                </div>
+
+
+                <div class="report">
+
+                    <h3>Energy Markets: Flexibility and Uncertainty</h3>
+
+                    <p>
+                        Supporting analysis exploring flexibility and uncertainty
+                        within energy markets.
+                    </p>
+
+                    <a href="../Energy_markets_flexibility_and_uncertainty.xlsx"
+                       class="report-link"
+                       target="_blank">
+                        Open Excel File →
+                    </a>
+
+                </div>
+
+
+                <div class="report">
+
+                    <h3>Energy News: Chile’s Hydrogen Tax Credit Bill</h3>
+
+                    <p>
+                        An exploration of Chile’s new hydrogen tax credits bill and
+                        its potential implications for hydrogen investment and development.
+                    </p>
+
+                    <a href="../Chile_tax_credit_presentation.pdf"
+                       class="report-link"
+                       target="_blank">
+                        View Presentation →
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+
+            <p>© 2026 Lois Olanrewaju</p>
+
+            <a href="policy-analysis-markets.html" class="footer-link">
+                Back to Policy & Markets
+            </a>
+
+        </div>
+    </footer>
+
 </body>
 </html>
