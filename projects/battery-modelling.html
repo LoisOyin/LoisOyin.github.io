@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Battery Modelling, Sizing & Optimisation | Lois Olanrewaju</title>
+
+    <meta name="description" content="Battery modelling, sizing and optimisation project by Lois Olanrewaju.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background: #f7f9fa;
+            color: #1f2933;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* Navigation */
+
+        nav {
+            padding: 24px 0;
+            background: #ffffff;
+            border-bottom: 1px solid #e6ecef;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .back-link {
+            font-size: 0.92rem;
+            color: #58727a;
+        }
+
+        .back-link:hover {
+            color: #0f766e;
+        }
+
+        /* Hero */
+
+        .hero {
+            padding: 85px 0 65px;
+            background: #ffffff;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 18px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #0f766e;
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+            color: #18252b;
+            margin-bottom: 25px;
+        }
+
+        .intro {
+            max-width: 760px;
+            font-size: 1.12rem;
+            color: #62747b;
+        }
+
+        /* Content */
+
+        main {
+            padding: 70px 0 100px;
+        }
+
+        .content-card {
+            background: #ffffff;
+            border: 1px solid #dfe7ea;
+            border-radius: 16px;
+            padding: 42px;
+        }
+
+        .content-card p {
+            margin-bottom: 20px;
+            color: #52656c;
+        }
+
+        .content-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            margin: 35px 0;
+            padding: 25px 28px;
+            background: #f0f6f5;
+            border-left: 4px solid #0f766e;
+            border-radius: 8px;
+            color: #52656c;
+        }
+
+        /* Project details */
+
+        .details {
+            margin-top: 35px;
+            padding-top: 30px;
+            border-top: 1px solid #e6ecef;
+        }
+
+        .details h2 {
+            font-size: 1.3rem;
+            margin-bottom: 18px;
+            color: #1f2933;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .tag {
+            padding: 6px 11px;
+            border-radius: 999px;
+            background: #f0f6f5;
+            color: #42656a;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        /* Project PDF */
+
+        .pdf-section {
+            margin-top: 30px;
+            padding: 30px;
+            background: #ffffff;
+            border: 1px solid #dfe7ea;
+            border-radius: 16px;
+        }
+
+        .pdf-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #1f2933;
+        }
+
+        .pdf-section p {
+            color: #687980;
+            margin-bottom: 20px;
+        }
+
+        .pdf-link {
+            display: inline-block;
+            padding: 11px 18px;
+            background: #0f766e;
+            color: #ffffff;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: opacity 0.2s ease;
+        }
+
+        .pdf-link:hover {
+            opacity: 0.88;
+        }
+
+        /* Footer */
+
+        footer {
+            padding: 32px 0;
+            background: #ffffff;
+            border-top: 1px solid #e6ecef;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer p,
+        .footer-link {
+            font-size: 0.85rem;
+            color: #7b8b90;
+        }
+
+        .footer-link:hover {
+            color: #0f766e;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav-inner {
+                padding: 0 20px;
+            }
+
+            .hero {
+                padding: 65px 0 50px;
+            }
+
+            .content-card {
+                padding: 30px 24px;
+            }
+
+            .pdf-section {
+                padding: 25px 22px;
+            }
+
+            .footer-inner {
+                padding: 0 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="../index.html" class="logo">Lois Olanrewaju</a>
+            <a href="battery-analysis.html" class="back-link">← Battery Projects</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="container">
+
+            <span class="eyebrow">Battery Analysis · DENSYS · 2026</span>
+
+            <h1>Battery Modelling, Sizing & Optimisation</h1>
+
+            <p class="intro">
+                How large does a battery actually need to be when the system
+                around it keeps changing?
+            </p>
+
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+
+            <div class="content-card">
+
+                <p>
+                    In this project, I developed a
+                    <strong>Python-based optimisation model using Pyomo and Gurobi</strong>
+                    to investigate battery sizing and operation in a residential
+                    energy system integrating PV, EV charging, a heat pump, the
+                    grid and a backup generator.
+                </p>
+
+                <p>
+                    I modelled battery dynamics and operational constraints across
+                    a full year at <strong>15-minute resolution</strong>, exploring
+                    how changes in system configuration, demand and energy prices
+                    affected storage requirements.
+                </p>
+
+                <div class="highlight">
+                    One comparison in particular showed just how much the role of
+                    a battery can change when the grid is no longer there to help...
+                </div>
+
+                <div class="details">
+
+                    <h2>Project Focus</h2>
+
+                    <div class="tags">
+                        <span class="tag">Battery Modelling</span>
+                        <span class="tag">Battery Sizing</span>
+                        <span class="tag">Optimisation</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Pyomo</span>
+                        <span class="tag">Gurobi</span>
+                        <span class="tag">PV</span>
+                        <span class="tag">EV</span>
+                        <span class="tag">Heat Pump</span>
+                        <span class="tag">Energy Systems</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project File -->
+            <div class="pdf-section">
+
+                <h2>Project Report</h2>
+
+                <p>
+                    The full project analysis, modelling approach and results
+                    are available in the report below.
+                </p>
+
+                <a href="../battery.pdf" class="pdf-link" target="_blank">
+                    View Project PDF →
+                </a>
+
+            </div>
+
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+
+            <p>© 2026 Lois Olanrewaju</p>
+
+            <a href="battery-analysis.html" class="footer-link">
+                Back to Battery Projects
+            </a>
+
+        </div>
+    </footer>
+
+</body>
+</html>
